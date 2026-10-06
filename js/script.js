@@ -1,163 +1,252 @@
 const header = document.getElementById('site-header');
-const menuToggle = document.querySelector('.menu-toggle');
-const mainNav = document.getElementById('main-nav');
-const year = document.getElementById('year');
+
+const menuToggle =
+  document.querySelector('.menu-toggle');
+
+const mainNav =
+  document.getElementById('main-nav');
+
+const year =
+  document.getElementById('year');
 
 
-// =========================================================
-// YEAR
-// =========================================================
+// ======================================================
+// AÑO AUTOMÁTICO
+// ======================================================
 
 if (year) {
-  year.textContent = new Date().getFullYear();
+
+  year.textContent =
+    new Date().getFullYear();
+
 }
 
 
-// =========================================================
-// HEADER SCROLL
-// =========================================================
+// ======================================================
+// HEADER AL HACER SCROLL
+// ======================================================
 
-window.addEventListener('scroll', () => {
+const updateHeader = () => {
 
-  header.classList.toggle(
+  header?.classList.toggle(
     'scrolled',
     window.scrollY > 30
   );
 
-}, {
-  passive: true
-});
+};
 
 
-// =========================================================
-// MOBILE MENU
-// =========================================================
-
-menuToggle?.addEventListener('click', () => {
-
-  const open =
-    mainNav.classList.toggle('open');
-
-  menuToggle.setAttribute(
-    'aria-expanded',
-    String(open)
-  );
-
-  menuToggle.setAttribute(
-    'aria-label',
-    open
-      ? 'Cerrar menú'
-      : 'Abrir menú'
-  );
-
-});
+window.addEventListener(
+  'scroll',
+  updateHeader,
+  {
+    passive: true
+  }
+);
 
 
-// =========================================================
-// CLOSE MOBILE MENU
-// =========================================================
+updateHeader();
+
+
+// ======================================================
+// MENÚ MÓVIL
+// ======================================================
+
+menuToggle?.addEventListener(
+  'click',
+  () => {
+
+    const open =
+      mainNav?.classList.toggle('open');
+
+
+    menuToggle.classList.toggle(
+      'active',
+      open
+    );
+
+
+    menuToggle.setAttribute(
+      'aria-expanded',
+      String(open)
+    );
+
+
+    menuToggle.setAttribute(
+      'aria-label',
+      open
+        ? 'Cerrar menú'
+        : 'Abrir menú'
+    );
+
+
+    document.body.classList.toggle(
+      'menu-open',
+      open
+    );
+
+  }
+);
+
+
+// ======================================================
+// CERRAR MENÚ AL PULSAR UN ENLACE
+// ======================================================
 
 document
   .querySelectorAll('.main-nav a')
-  .forEach(link => {
+  .forEach(
+    link => {
 
-    link.addEventListener('click', () => {
+      link.addEventListener(
+        'click',
+        () => {
 
-      mainNav.classList.remove('open');
+          mainNav?.classList.remove(
+            'open'
+          );
 
-      menuToggle?.setAttribute(
-        'aria-expanded',
-        'false'
+
+          menuToggle?.classList.remove(
+            'active'
+          );
+
+
+          menuToggle?.setAttribute(
+            'aria-expanded',
+            'false'
+          );
+
+
+          menuToggle?.setAttribute(
+            'aria-label',
+            'Abrir menú'
+          );
+
+
+          document.body.classList.remove(
+            'menu-open'
+          );
+
+        }
       );
 
-    });
+    }
+  );
 
-  });
 
-
-// =========================================================
-// SCROLL REVEAL
-// =========================================================
+// ======================================================
+// ANIMACIONES AL HACER SCROLL
+// ======================================================
 
 const observer =
   new IntersectionObserver(
 
     (entries, obs) => {
 
-      entries.forEach(entry => {
+      entries.forEach(
+        entry => {
 
-        if (entry.isIntersecting) {
+          if (
+            entry.isIntersecting
+          ) {
 
-          entry.target.classList.add('visible');
+            entry.target.classList.add(
+              'visible'
+            );
 
-          obs.unobserve(entry.target);
+
+            obs.unobserve(
+              entry.target
+            );
+
+          }
 
         }
-
-      });
+      );
 
     },
 
     {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.1,
+
+      rootMargin:
+        '0px 0px -35px 0px'
     }
 
   );
 
 
-// Observe reveal elements
-
 document
   .querySelectorAll('.reveal')
-  .forEach(el => {
+  .forEach(
+    element => {
 
-    observer.observe(el);
+      observer.observe(
+        element
+      );
 
-  });
+    }
+  );
 
 
-// =========================================================
-// SMOOTH ANCHOR SCROLL
-// =========================================================
+// ======================================================
+// SCROLL SUAVE
+// ======================================================
 
 document
-  .querySelectorAll('a[href^="#"]')
-  .forEach(anchor => {
+  .querySelectorAll(
+    'a[href^="#"]'
+  )
+  .forEach(
+    anchor => {
 
-    anchor.addEventListener(
-      'click',
-      event => {
+      anchor.addEventListener(
+        'click',
+        event => {
 
-        const targetId =
-          anchor.getAttribute('href');
+          const targetId =
+            anchor.getAttribute(
+              'href'
+            );
 
-        if (
-          !targetId ||
-          targetId === '#'
-        ) {
-          return;
+
+          if (
+            !targetId ||
+            targetId === '#'
+          ) {
+
+            return;
+
+          }
+
+
+          const target =
+            document.querySelector(
+              targetId
+            );
+
+
+          if (!target) {
+
+            return;
+
+          }
+
+
+          event.preventDefault();
+
+
+          target.scrollIntoView({
+
+            behavior: 'smooth',
+
+            block: 'start'
+
+          });
+
         }
+      );
 
-
-        const target =
-          document.querySelector(targetId);
-
-
-        if (!target) {
-          return;
-        }
-
-
-        event.preventDefault();
-
-
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-
-      }
-    );
-
-  });
+    }
+  );
