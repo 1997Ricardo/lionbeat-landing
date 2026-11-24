@@ -1,1302 +1,202 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  >
-
-  <meta
-    name="theme-color"
-    content="#080808"
-  >
-
-  <meta
-    name="description"
-    content="LionBeat Performance System. Programación estructurada para atletas de HYROX, CrossFit y entrenamiento híbrido que quieren rendir y competir."
-  >
-
-  <meta
-    name="author"
-    content="Ricardo Osuna"
-  >
-
-  <meta
-    name="robots"
-    content="index, follow"
-  >
-
-  <title>
-    LionBeat Performance System | Entrena para rendir
-  </title>
-
-
-  <!-- =====================================================
-       OPEN GRAPH
-  ====================================================== -->
-
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:title"
-    content="LionBeat Performance System"
-  >
-
-  <meta
-    property="og:description"
-    content="Programación estructurada para atletas que quieren rendir y competir."
-  >
-
-  <meta
-    property="og:image"
-    content="assets/lionbeat-logo.png"
-  >
-
-
-  <!-- =====================================================
-       FONTS
-  ====================================================== -->
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
-
-  <!-- =====================================================
-       CSS
-  ====================================================== -->
-
-  <link
-    rel="stylesheet"
-    href="css/style.css"
-  >
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="LIONBEAT PERFORMANCE SYSTEM. Entrenamiento y programación para atletas de HYROX, CrossFit y deporte híbrido. Estructura, criterio y seguimiento para competir mejor.">
+  <meta name="author" content="Ricardo Osuna">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lionbeat-landing.vercel.app/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/hybrid-lionbeat.webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="LIONBEAT PERFORMANCE">
+  <meta property="og:title" content="LIONBEAT PERFORMANCE — Train with purpose">
+  <meta property="og:description" content="Programación estructurada para atletas que entrenan para rendir y competir.">
+  <meta property="og:url" content="https://lionbeat-landing.vercel.app/">
+  <meta property="og:image" content="https://lionbeat-landing.vercel.app/assets/hybrid-lionbeat.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LIONBEAT PERFORMANCE — Train with purpose">
+  <meta name="twitter:description" content="Estructura, criterio y seguimiento para atletas que quieren competir mejor.">
+  <title>LIONBEAT PERFORMANCE | Entrena con propósito</title>
 </head>
-
-
 <body>
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
 
-
-  <!-- =====================================================
-       SKIP LINK
-  ====================================================== -->
-
-  <a
-    class="skip-link"
-    href="#main-content"
-  >
-    Saltar al contenido
-  </a>
-
-
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
-
-  <header
-    class="site-header"
-    id="site-header"
-  >
-
+  <header class="site-header" id="site-header">
     <div class="container nav-wrap">
-
-
-      <a
-        class="brand"
-        href="#top"
-        aria-label="LionBeat Performance System"
-      >
-
-        <img
-          src="assets/lionbeat-logo.png"
-          alt="LionBeat Performance System"
-        >
-
+      <a class="brand" href="#top" aria-label="LIONBEAT PERFORMANCE, inicio">
+        <img src="assets/lionbeat-logo.png" alt="LIONBEAT PERFORMANCE" width="240" height="90">
       </a>
-
-
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="main-nav"
-      >
-
-        <span></span>
-        <span></span>
-        <span></span>
-
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span>
       </button>
-
-
-      <nav
-        class="main-nav"
-        id="main-nav"
-        aria-label="Navegación principal"
-      >
-
-        <a href="#system">
-          Sistema
-        </a>
-
-        <a href="#programs">
-          Programas
-        </a>
-
-        <a href="#method">
-          Método
-        </a>
-
-        <a href="#about">
-          Sobre mí
-        </a>
-
-        <a
-          class="nav-cta"
-          href="https://wa.me/34633090021?text=Hola%20Ricardo%2C%20quiero%20informaci%C3%B3n%20sobre%20LionBeat%20Performance%20System."
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Empezar
-          <span>↗</span>
-        </a>
-
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal" aria-hidden="true">
+        <a href="#system">El sistema</a>
+        <a href="#programs">Programas</a>
+        <a href="#method">Metodología</a>
+        <a href="#about">El coach</a>
+        <a class="nav-cta" href="https://wa.me/34633090021?text=Hola%20Ricardo%2C%20quiero%20informaci%C3%B3n%20sobre%20LionBeat%20Performance." target="_blank" rel="noopener noreferrer">Hablemos <span aria-hidden="true">↗</span></a>
       </nav>
-
     </div>
-
   </header>
 
-
-  <!-- =====================================================
-       MAIN
-  ====================================================== -->
-
   <main id="main-content">
-
-
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
-
-    <section
-      class="hero"
-      id="top"
-    >
-
-      <div
-        class="hero-media"
-        aria-hidden="true"
-      >
-
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
         <picture>
-
-          <source
-            media="(max-width: 767px)"
-            srcset="assets/ricardo.jpg"
-          >
-
-          <img
-            src="assets/hybrid-lionbeat.webp"
-            alt=""
-            fetchpriority="high"
-          >
-
+          <source media="(max-width: 767px)" srcset="assets/ricardo.jpg">
+          <img src="assets/hybrid-lionbeat.webp" alt="" fetchpriority="high" decoding="async">
         </picture>
-
       </div>
-
-
-      <div
-        class="hero-overlay"
-        aria-hidden="true"
-      ></div>
-
-
-      <div class="container hero-container">
-
-
-        <div class="hero-content reveal">
-
-          <p class="eyebrow">
-
-            <span></span>
-
-            LIONBEAT PERFORMANCE SYSTEM
-
-          </p>
-
-
-          <h1>
-
-            ENTRENA
-            <br>
-
-            <em>
-              PARA RENDIR.
-            </em>
-
-          </h1>
-
-
-          <p class="hero-description">
-
-            Programación estructurada para atletas que
-            entrenan para competir. Fuerza, running y
-            acondicionamiento dentro de un mismo sistema.
-
-          </p>
-
-
-          <div class="hero-buttons">
-
-            <a
-              class="btn btn-primary"
-              href="https://wa.me/34633090021?text=Hola%20Ricardo%2C%20quiero%20informaci%C3%B3n%20sobre%20LionBeat%20Performance%20System."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-
-              Quiero entrenar
-
-              <span>
-                ↗
-              </span>
-
-            </a>
-
-
-            <a
-              class="btn btn-outline"
-              href="#system"
-            >
-
-              Descubrir el sistema
-
-            </a>
-
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> PERFORMANCE IS A PROCESS</p>
+          <h1 id="hero-title">NO ES SOLO<br><em>ENTRENAR.</em><br>ES <span>EVOLUCIONAR.</span></h1>
+          <p class="hero-lead">Programación, estrategia y seguimiento para atletas que quieren llevar su rendimiento a otro nivel.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://wa.me/34633090021?text=Hola%20Ricardo%2C%20quiero%20empezar%20con%20LionBeat." target="_blank" rel="noopener noreferrer">Empieza tu proceso <span aria-hidden="true">↗</span></a>
+            <a class="text-action" href="#system">Descubre el sistema <span aria-hidden="true">↓</span></a>
           </div>
-
         </div>
-
-
-        <div class="hero-disciplines reveal">
-
-          <span>
-            HYROX
-          </span>
-
-          <span>
-            CROSSFIT
-          </span>
-
-          <span>
-            HYBRID
-          </span>
-
-          <span>
-            COMPETICIÓN
-          </span>
-
+        <div class="hero-bottom">
+          <span>HYROX <i></i> CROSSFIT <i></i> HYBRID</span>
+          <span class="hero-index">01 / 04</span>
         </div>
-
       </div>
-
+      <div class="hero-side-label" aria-hidden="true">BUILT FOR PERFORMANCE</div>
     </section>
 
-
-    <!-- =====================================================
-         SYSTEM
-    ====================================================== -->
-
-    <section
-      class="system section-light"
-      id="system"
-    >
-
-      <div class="container">
-
-
-        <div class="section-header reveal">
-
-          <p class="eyebrow eyebrow-dark">
-
-            <span></span>
-
-            EL SISTEMA
-
-          </p>
-
-
-          <h2>
-
-            NO ENTRENES MÁS.
-            <br>
-
-            <strong>
-              ENTRENA MEJOR.
-            </strong>
-
-          </h2>
-
-
-          <p>
-
-            LionBeat conecta fuerza, capacidad aeróbica,
-            acondicionamiento y especificidad competitiva
-            para que cada sesión tenga un propósito.
-
-          </p>
-
-        </div>
-
-
-        <div class="system-grid">
-
-
-          <article class="system-item reveal">
-
-            <span class="system-number">
-              01
-            </span>
-
-            <div>
-
-              <h3>
-                FUERZA
-              </h3>
-
-              <p>
-                Construir una base sólida para producir
-                y mantener rendimiento.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="system-item reveal">
-
-            <span class="system-number">
-              02
-            </span>
-
-            <div>
-
-              <h3>
-                RUNNING
-              </h3>
-
-              <p>
-                Mejorar eficiencia, ritmo y capacidad
-                para sostener el esfuerzo.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="system-item reveal">
-
-            <span class="system-number">
-              03
-            </span>
-
-            <div>
-
-              <h3>
-                ACONDICIONAMIENTO
-              </h3>
-
-              <p>
-                Desarrollar el motor que permite repetir
-                esfuerzos de calidad.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="system-item reveal">
-
-            <span class="system-number">
-              04
-            </span>
-
-            <div>
-
-              <h3>
-                COMPETICIÓN
-              </h3>
-
-              <p>
-                Transferir el entrenamiento a las demandas
-                reales de cada desafío.
-              </p>
-
-            </div>
-
-          </article>
-
-        </div>
-
+    <section class="intro-strip" aria-label="Filosofía LionBeat">
+      <div class="container intro-strip-inner">
+        <span class="strip-kicker">LIONBEAT PERFORMANCE SYSTEM</span>
+        <p>Entrena con intención<span>.</span> Compite con confianza<span>.</span></p>
+        <span class="strip-mark" aria-hidden="true">LB<span>✳</span></span>
       </div>
-
     </section>
 
-
-    <!-- =====================================================
-         PROGRAMS
-    ====================================================== -->
-
-    <section
-      class="programs section-dark"
-      id="programs"
-    >
-
+    <section class="section system-section" id="system" aria-labelledby="system-title">
       <div class="container">
-
-
-        <div class="section-header section-header-dark reveal">
-
-          <p class="eyebrow">
-
-            <span></span>
-
-            PROGRAMAS
-
-          </p>
-
-
-          <h2>
-
-            TU OBJETIVO.
-            <br>
-
-            <em>
-              NUESTRO SISTEMA.
-            </em>
-
-          </h2>
-
-
-          <p>
-
-            Tres caminos. Una misma filosofía:
-            entrenar con estructura para llegar
-            preparado cuando importa.
-
-          </p>
-
+        <div class="section-heading reveal">
+          <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> THE PERFORMANCE SYSTEM</p>
+          <div class="heading-row">
+            <h2 id="system-title">EL RENDIMIENTO<br>NO SE <em>IMPROVISA.</em></h2>
+            <p class="section-intro">Cada sesión tiene un porqué. Cada bloque, un objetivo. Cada ajuste responde a la evolución del atleta.</p>
+          </div>
         </div>
+        <div class="pillars-grid">
+          <article class="pillar reveal">
+            <span class="pillar-no">01</span><div class="pillar-icon" aria-hidden="true">↗</div>
+            <h3>FUERZA</h3><p>Construye una base sólida para producir fuerza y sostenerla cuando la exigencia aumenta.</p>
+            <span class="pillar-foot">BUILD THE BASE</span>
+          </article>
+          <article class="pillar reveal">
+            <span class="pillar-no">02</span><div class="pillar-icon" aria-hidden="true">⌁</div>
+            <h3>RUNNING</h3><p>Desarrolla eficiencia, ritmo y capacidad para correr bien incluso bajo fatiga.</p>
+            <span class="pillar-foot">FIND YOUR PACE</span>
+          </article>
+          <article class="pillar reveal">
+            <span class="pillar-no">03</span><div class="pillar-icon" aria-hidden="true">◉</div>
+            <h3>MOTOR</h3><p>Mejora tu capacidad de trabajo y la habilidad de repetir esfuerzos de calidad.</p>
+            <span class="pillar-foot">BUILD CAPACITY</span>
+          </article>
+          <article class="pillar pillar-featured reveal">
+            <span class="pillar-no">04</span><div class="pillar-icon" aria-hidden="true">✳</div>
+            <h3>COMPETICIÓN</h3><p>Transfiere lo entrenado a las demandas reales de tu disciplina y tu objetivo.</p>
+            <span class="pillar-foot">PERFORM WHEN IT MATTERS</span>
+          </article>
+        </div>
+      </div>
+    </section>
 
-
+    <section class="programs-section" id="programs" aria-labelledby="programs-title">
+      <div class="container">
+        <div class="section-heading section-heading-light reveal">
+          <p class="eyebrow"><span class="eyebrow-line"></span> CHOOSE YOUR CHALLENGE</p>
+          <div class="heading-row">
+            <h2 id="programs-title">TU OBJETIVO.<br><em>NUESTRO SISTEMA.</em></h2>
+            <p class="section-intro">Tres caminos de preparación. Una misma filosofía: entrenar con estructura para llegar preparado cuando importa.</p>
+          </div>
+        </div>
         <div class="program-grid">
-
-
-          <!-- HYROX -->
-
           <article class="program-card reveal">
-
-            <div class="program-image">
-
-              <img
-                src="assets/hyrox-lionbeat.webp"
-                alt="Atleta entrenando HYROX con LionBeat"
-                loading="lazy"
-              >
-
-            </div>
-
-
-            <div class="program-content">
-
-              <span class="program-number">
-                01 / PERFORMANCE
-              </span>
-
-
-              <h3>
-                HYROX
-              </h3>
-
-
-              <p>
-
-                Running, estaciones, fuerza y capacidad
-                híbrida orientados a competir.
-
-              </p>
-
-
-              <a
-                href="https://wa.me/34633090021?text=Hola%20Ricardo%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20programa%20HYROX%20de%20LionBeat."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-
-                Ver programa
-
-                <span>
-                  ↗
-                </span>
-
-              </a>
-
-            </div>
-
+            <div class="program-image"><img src="assets/hyrox-lionbeat.webp" alt="Entrenamiento de preparación HYROX" loading="lazy" decoding="async"><span class="program-tag">01 / RACE READY</span></div>
+            <div class="program-body"><div class="program-title-row"><h3>HYROX</h3><span aria-hidden="true">↗</span></div><p>Running, estaciones y fuerza híbrida. Prepara cada transición y aprende a sostener el ritmo de carrera.</p><a href="https://wa.me/34633090021?text=Hola%20Ricardo%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20preparaci%C3%B3n%20HYROX." target="_blank" rel="noopener noreferrer">Descubrir HYROX <span aria-hidden="true">↗</span></a></div>
           </article>
-
-
-          <!-- CROSSFIT -->
-
           <article class="program-card reveal">
-
-            <div class="program-image">
-
-              <img
-                src="assets/crossfit-lionbeat.webp"
-                alt="Atleta entrenando CrossFit con LionBeat"
-                loading="lazy"
-              >
-
-            </div>
-
-
-            <div class="program-content">
-
-              <span class="program-number">
-                02 / PERFORMANCE
-              </span>
-
-
-              <h3>
-                CROSSFIT
-              </h3>
-
-
-              <p>
-
-                Fuerza, levantamientos, gimnasia y
-                acondicionamiento para desarrollar al atleta.
-
-              </p>
-
-
-              <a
-                href="https://wa.me/34633090021?text=Hola%20Ricardo%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20programa%20CrossFit%20de%20LionBeat."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-
-                Ver programa
-
-                <span>
-                  ↗
-                </span>
-
-              </a>
-
-            </div>
-
+            <div class="program-image"><img src="assets/crossfit-lionbeat.webp" alt="Atleta entrenando CrossFit" loading="lazy" decoding="async"><span class="program-tag">02 / COMPETE STRONG</span></div>
+            <div class="program-body"><div class="program-title-row"><h3>CROSSFIT</h3><span aria-hidden="true">↗</span></div><p>Fuerza, halterofilia, gimnasia y conditioning integrados en una programación con progresión.</p><a href="https://wa.me/34633090021?text=Hola%20Ricardo%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20programaci%C3%B3n%20CrossFit." target="_blank" rel="noopener noreferrer">Descubrir CrossFit <span aria-hidden="true">↗</span></a></div>
           </article>
-
-
-          <!-- HYBRID -->
-
           <article class="program-card reveal">
-
-            <div class="program-image">
-
-              <img
-                src="assets/hybrid-lionbeat.webp"
-                alt="Entrenamiento híbrido LionBeat"
-                loading="lazy"
-              >
-
-            </div>
-
-
-            <div class="program-content">
-
-              <span class="program-number">
-                03 / PERFORMANCE
-              </span>
-
-
-              <h3>
-                HYBRID
-              </h3>
-
-
-              <p>
-
-                La combinación estratégica de fuerza,
-                running y motor para atletas híbridos.
-
-              </p>
-
-
-              <a
-                href="https://wa.me/34633090021?text=Hola%20Ricardo%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20programa%20H%C3%ADbrido%20de%20LionBeat."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-
-                Ver programa
-
-                <span>
-                  ↗
-                </span>
-
-              </a>
-
-            </div>
-
+            <div class="program-image"><img src="assets/hybrid-lionbeat.webp" alt="Entrenamiento híbrido de fuerza y resistencia" loading="lazy" decoding="async"><span class="program-tag">03 / HYBRID ATHLETE</span></div>
+            <div class="program-body"><div class="program-title-row"><h3>HYBRID</h3><span aria-hidden="true">↗</span></div><p>Combina fuerza y resistencia con una planificación que busca equilibrio y transferencia.</p><a href="https://wa.me/34633090021?text=Hola%20Ricardo%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20entrenamiento%20h%C3%ADbrido." target="_blank" rel="noopener noreferrer">Descubrir Hybrid <span aria-hidden="true">↗</span></a></div>
           </article>
-
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- =====================================================
-         METHOD
-    ====================================================== -->
-
-    <section
-      class="method section-light"
-      id="method"
-    >
-
-      <div class="container">
-
-
-        <div class="section-header reveal">
-
-          <p class="eyebrow eyebrow-dark">
-
-            <span></span>
-
-            EL MÉTODO
-
-          </p>
-
-
-          <h2>
-
-            UN SISTEMA.
-            <br>
-
-            <strong>
-              NO ENTRENAMIENTOS AL AZAR.
-            </strong>
-
-          </h2>
-
-
-          <p>
-
-            El rendimiento se construye con decisiones.
-            Cada bloque responde a una necesidad y cada
-            ajuste a una respuesta del atleta.
-
-          </p>
-
+    <section class="method-section section" id="method" aria-labelledby="method-title">
+      <div class="container method-layout">
+        <div class="method-heading reveal">
+          <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> THE METHOD</p>
+          <h2 id="method-title">MENOS AZAR.<br><em>MÁS CRITERIO.</em></h2>
+          <p>El progreso no depende de hacer más por hacer. Depende de tomar mejores decisiones, medir la respuesta y ajustar el proceso.</p>
+          <a class="button button-dark" href="https://wa.me/34633090021?text=Hola%20Ricardo%2C%20quiero%20conocer%20la%20metodolog%C3%ADa%20LionBeat." target="_blank" rel="noopener noreferrer">Hablemos de tus objetivos <span aria-hidden="true">↗</span></a>
         </div>
-
-
-        <div class="method-list">
-
-
-          <article class="method-item reveal">
-
-            <div class="method-number">
-              01
-            </div>
-
-            <div class="method-content">
-
-              <h3>
-                EVALUAR
-              </h3>
-
-              <p>
-                Conocer el punto de partida,
-                objetivos y necesidades.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="method-item reveal">
-
-            <div class="method-number">
-              02
-            </div>
-
-            <div class="method-content">
-
-              <h3>
-                PROGRAMAR
-              </h3>
-
-              <p>
-                Diseñar una progresión con
-                intención y propósito.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="method-item reveal">
-
-            <div class="method-number">
-              03
-            </div>
-
-            <div class="method-content">
-
-              <h3>
-                ENTRENAR
-              </h3>
-
-              <p>
-                Ejecutar cada sesión entendiendo
-                qué se busca.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="method-item reveal">
-
-            <div class="method-number">
-              04
-            </div>
-
-            <div class="method-content">
-
-              <h3>
-                ADAPTAR
-              </h3>
-
-              <p>
-                Analizar la respuesta y ajustar
-                para seguir avanzando.
-              </p>
-
-            </div>
-
-          </article>
-
+        <div class="method-steps">
+          <article class="method-step reveal"><span>01</span><div><h3>EVALUAR</h3><p>Conocemos tu punto de partida, experiencia, disponibilidad y objetivo.</p></div><b aria-hidden="true">+</b></article>
+          <article class="method-step reveal"><span>02</span><div><h3>PROGRAMAR</h3><p>Diseñamos una progresión coherente con las demandas de tu disciplina.</p></div><b aria-hidden="true">+</b></article>
+          <article class="method-step reveal"><span>03</span><div><h3>EJECUTAR</h3><p>Entrenas con intención, entendiendo el propósito de cada sesión.</p></div><b aria-hidden="true">+</b></article>
+          <article class="method-step reveal"><span>04</span><div><h3>ADAPTAR</h3><p>Analizamos tu respuesta y ajustamos el plan para seguir avanzando.</p></div><b aria-hidden="true">↗</b></article>
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- =====================================================
-         ABOUT
-    ====================================================== -->
-
-    <section
-      class="about section-soft"
-      id="about"
-    >
-
-      <div class="container about-layout">
-
-
-        <!-- FOTO -->
-
-        <div class="about-image reveal">
-
-          <img
-            src="assets/ricardo.jpg"
-            alt="Ricardo Osuna, fundador y coach de LionBeat"
-            loading="lazy"
-          >
-
-
-          <div class="about-label">
-            COACH &amp; FOUNDER
-          </div>
-
+    <section class="coach-section" id="about" aria-labelledby="coach-title">
+      <div class="coach-image"><img src="assets/ricardo.jpg" alt="Ricardo Osuna, fundador y entrenador de LionBeat Performance" loading="lazy" decoding="async"><span class="coach-image-caption">COACH / FOUNDER</span></div>
+      <div class="coach-content">
+        <p class="eyebrow"><span class="eyebrow-line"></span> THE PERSON BEHIND THE SYSTEM</p>
+        <h2 id="coach-title">RICARDO<br><em>OSUNA.</em></h2>
+        <p class="coach-lead">La experiencia deportiva aporta perspectiva. La formación, criterio. Y el trabajo diario, la capacidad de convertir ambos en un método.</p>
+        <p class="coach-copy">Soy profesional de las Ciencias de la Actividad Física y del Deporte, especializado en entrenamiento, rendimiento y readaptación. Mi enfoque conecta fuerza, running, acondicionamiento y especificidad competitiva dentro de una estructura coherente.</p>
+        <div class="coach-credentials">
+          <div><span>FORMACIÓN</span><strong>Ciencias de la Actividad Física y del Deporte</strong><small>Universidad Isabel I · 2022</small></div>
+          <div><span>ESPECIALIZACIÓN</span><strong>Entrenamiento, nutrición y readaptación</strong><small>Formación de posgrado · 2017–2023</small></div>
+          <div><span>EXPERIENCIA</span><strong>Deporte y preparación de atletas</strong><small>Natación · CrossFit · HIFT · HYROX</small></div>
         </div>
-
-
-        <!-- CONTENIDO -->
-
-        <div class="about-content reveal">
-
-
-          <p class="eyebrow eyebrow-dark">
-
-            <span></span>
-
-            SOBRE MÍ
-
-          </p>
-
-
-          <h2>
-
-            RICARDO
-            <br>
-
-            <strong>
-              OSUNA.
-            </strong>
-
-          </h2>
-
-
-          <p class="about-intro">
-
-            Profesional del deporte especializado en
-            entrenamiento, rendimiento y readaptación,
-            con una trayectoria ligada al deporte y a la
-            preparación de atletas.
-
-          </p>
-
-
-          <p>
-
-            Mi enfoque une fuerza, running, acondicionamiento
-            y especificidad competitiva dentro de una estructura
-            coherente. El objetivo no es acumular sesiones,
-            sino convertir el entrenamiento en rendimiento.
-
-          </p>
-
-
-          <!-- =============================================
-               FORMATION
-          ============================================== -->
-
-          <div class="about-education">
-
-
-            <div class="education-heading">
-
-              <span></span>
-
-              <h3>
-                FORMACIÓN
-              </h3>
-
-            </div>
-
-
-            <div class="education-list">
-
-
-              <div class="education-item">
-
-                <span class="education-year">
-                  2022
-                </span>
-
-                <div>
-
-                  <strong>
-                    Ciencias de la Actividad Física
-                    y del Deporte
-                  </strong>
-
-                  <small>
-                    Universidad Isabel I
-                  </small>
-
-                </div>
-
-              </div>
-
-
-              <div class="education-item">
-
-                <span class="education-year">
-                  2017
-                </span>
-
-                <div>
-
-                  <strong>
-                    Máster en Entrenamiento Deportivo
-                  </strong>
-
-                  <small>
-                    Universidad Isabel I · 60 ECTS
-                  </small>
-
-                </div>
-
-              </div>
-
-
-              <div class="education-item">
-
-                <span class="education-year">
-                  2021
-                </span>
-
-                <div>
-
-                  <strong>
-                    Máster en Nutrición Deportiva
-                    y Entrenamiento
-                  </strong>
-
-                  <small>
-                    ICNS · 48 ECTS
-                  </small>
-
-                </div>
-
-              </div>
-
-
-              <div class="education-item">
-
-                <span class="education-year">
-                  2023
-                </span>
-
-                <div>
-
-                  <strong>
-                    Máster en Prevención,
-                    Readaptación de Lesiones y Dolor
-                  </strong>
-
-                  <small>
-                    Fidias Health Sport Education · IPTC
-                  </small>
-
-                </div>
-
-              </div>
-
-
-              <div class="education-item">
-
-                <span class="education-year">
-                  2017
-                </span>
-
-                <div>
-
-                  <strong>
-                    Técnico Superior en Actividades
-                    Físicas y Deportivas
-                  </strong>
-
-                  <small>
-                    MEDAC Málaga
-                  </small>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- =============================================
-               EXPERIENCE HIGHLIGHTS
-          ============================================== -->
-
-          <div class="about-credentials">
-
-
-            <div class="credential">
-
-              <span class="credential-icon">
-                01
-              </span>
-
-              <div>
-
-                <strong>
-                  RENDIMIENTO
-                </strong>
-
-                <small>
-                  CrossFit · HIFT · HYROX · preparación física
-                </small>
-
-              </div>
-
-            </div>
-
-
-            <div class="credential">
-
-              <span class="credential-icon">
-                02
-              </span>
-
-              <div>
-
-                <strong>
-                  READAPTACIÓN
-                </strong>
-
-                <small>
-                  Prevención, recuperación y retorno al entrenamiento
-                </small>
-
-              </div>
-
-            </div>
-
-
-            <div class="credential">
-
-              <span class="credential-icon">
-                03
-              </span>
-
-              <div>
-
-                <strong>
-                  EXPERIENCIA COMPETITIVA
-                </strong>
-
-                <small>
-                  Exnadador internacional · CrossFit · HYROX
-                </small>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <a
-            class="text-link"
-            href="https://wa.me/34633090021?text=Hola%20Ricardo%2C%20quiero%20conocer%20LionBeat%20Performance%20System."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            Hablar con Ricardo
-
-            <span>
-              ↗
-            </span>
-
-          </a>
-
-        </div>
-
+        <a class="coach-link" href="https://wa.me/34633090021?text=Hola%20Ricardo%2C%20me%20gustar%C3%ADa%20hablar%20contigo%20sobre%20mi%20preparaci%C3%B3n." target="_blank" rel="noopener noreferrer">Conecta conmigo <span aria-hidden="true">↗</span></a>
       </div>
-
     </section>
 
-
-    <!-- =====================================================
-         FINAL CTA
-    ====================================================== -->
-
-    <section
-      class="final-cta section-dark"
-    >
-
-      <div class="container final-cta-content reveal">
-
-
-        <img
-          class="cta-logo"
-          src="assets/lionbeat-logo.png"
-          alt="LionBeat Performance System"
-          loading="lazy"
-        >
-
-
-        <p class="eyebrow">
-
-          <span></span>
-
-          TU SIGUIENTE PASO
-
-        </p>
-
-
-        <h2>
-
-          ENTRENA
-          <br>
-
-          <em>
-            CON PROPÓSITO.
-          </em>
-
-        </h2>
-
-
-        <p>
-
-          Si quieres competir mejor, empieza por tener
-          un sistema detrás de cada sesión.
-
-        </p>
-
-
-        <a
-          class="btn btn-primary"
-          href="https://wa.me/34633090021?text=Hola%20Ricardo%2C%20quiero%20formar%20parte%20de%20LionBeat."
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
-          Empezar con LionBeat
-
-          <span>
-            ↗
-          </span>
-
-        </a>
-
+    <section class="closing-section" aria-labelledby="closing-title">
+      <div class="closing-bg" aria-hidden="true"></div>
+      <div class="container closing-content reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT LEVEL STARTS HERE</p>
+        <h2 id="closing-title">EL SIGUIENTE<br><em>NIVEL NO LLEGA.</em><br>SE CONSTRUYE.</h2>
+        <p>Cuéntame qué objetivo tienes. Vamos a darle estructura.</p>
+        <a class="button button-primary button-large" href="https://wa.me/34633090021?text=Hola%20Ricardo%2C%20quiero%20empezar%20mi%20proceso%20con%20LionBeat." target="_blank" rel="noopener noreferrer">Empieza con LionBeat <span aria-hidden="true">↗</span></a>
       </div>
-
     </section>
-
-
   </main>
 
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
-  <footer class="footer">
-
+  <footer class="site-footer">
     <div class="container footer-main">
-
-
-      <a
-        class="footer-logo"
-        href="#top"
-        aria-label="Volver al inicio"
-      >
-
-        <img
-          src="assets/lionbeat-logo.png"
-          alt="LionBeat Performance System"
-        >
-
-      </a>
-
-
-      <nav
-        class="footer-navigation"
-        aria-label="Navegación secundaria"
-      >
-
-        <a href="#system">
-          Sistema
-        </a>
-
-        <a href="#programs">
-          Programas
-        </a>
-
-        <a href="#method">
-          Método
-        </a>
-
-        <a href="#about">
-          Sobre mí
-        </a>
-
-      </nav>
-
-
-      <div class="footer-social">
-
-        <a
-          href="https://wa.me/34633090021"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          WhatsApp ↗
-        </a>
-
-
-        <a
-          href="https://www.instagram.com/lionbeat.performance/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Instagram ↗
-        </a>
-
-      </div>
-
+      <div class="footer-brand"><a href="#top" aria-label="Volver al inicio"><img src="assets/lionbeat-logo.png" alt="LIONBEAT PERFORMANCE" width="240" height="90" loading="lazy"></a><p>TRAIN WITH PURPOSE.<br>PERFORM WITH INTENT.</p></div>
+      <div class="footer-nav"><span class="footer-label">EXPLORA</span><a href="#system">El sistema</a><a href="#programs">Programas</a><a href="#method">Metodología</a><a href="#about">El coach</a></div>
+      <div class="footer-contact"><span class="footer-label">SÍGUENOS / CONTACTO</span><a href="https://www.instagram.com/lionbeat.performance/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://wa.me/34633090021" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div>
     </div>
-
-
-    <div class="container footer-bottom">
-
-      <span>
-        © <span id="year"></span>
-        LionBeat Performance System
-      </span>
-
-
-      <span>
-        Programación · Seguimiento · Rendimiento
-      </span>
-
-    </div>
-
+    <div class="container footer-bottom"><span>© <span id="year"></span> LIONBEAT PERFORMANCE SYSTEM</span><a href="#top">VOLVER ARRIBA ↑</a><span>BUILT FOR THE WORK.</span></div>
   </footer>
 
-
-  <!-- =====================================================
-       JAVASCRIPT
-  ====================================================== -->
-
-  <script src="js/script.js"></script>
-
+  <script src="js/script.js" defer></script>
 </body>
-
 </html>
