@@ -370,3 +370,14 @@ button{font:inherit}
   line-height:1;
   font-style:normal;
 }
+
+
+/* Method phases are informational, not accordion controls */
+.method-marker{
+  display:block;
+  width:14px;
+  height:2px;
+  margin-top:10px;
+  background:var(--color-red);
+  opacity:.9;
+}
