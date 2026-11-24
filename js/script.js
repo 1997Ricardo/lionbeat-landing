@@ -7,6 +7,19 @@
   const menuToggle = document.querySelector(".menu-toggle");
   const mainNav = document.getElementById("main-nav");
   const year = document.getElementById("year");
+
+  const heroImage = document.querySelector(".hero-media img");
+  if (heroImage) {
+    fetch("assets/lionbeat-hero.webp.b64")
+      .then(response => {
+        if (!response.ok) throw new Error("Hero image unavailable");
+        return response.text();
+      })
+      .then(encodedImage => {
+        heroImage.src = `data:image/webp;base64,${encodedImage.trim()}`;
+      })
+      .catch(() => {});
+  }
   const progressBar = document.getElementById("scroll-progress-bar");
   const revealItems = document.querySelectorAll(".reveal");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
