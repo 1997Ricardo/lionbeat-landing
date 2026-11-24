@@ -1,356 +1,111 @@
-/* =========================================================
-   LIONBEAT PERFORMANCE SYSTEM
-   VANILLA JAVASCRIPT
-========================================================= */
+(() => {
+  "use strict";
 
+  document.documentElement.classList.add("js-enabled");
 
-/* =========================================================
-   ELEMENTS
-========================================================= */
+  const header = document.getElementById("site-header");
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mainNav = document.getElementById("main-nav");
+  const year = document.getElementById("year");
+  const progressBar = document.getElementById("scroll-progress-bar");
+  const revealItems = document.querySelectorAll(".reveal");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-const header =
-  document.getElementById("site-header");
+  if (year) year.textContent = String(new Date().getFullYear());
 
-const menuToggle =
-  document.querySelector(".menu-toggle");
+  let ticking = false;
+  const updateScrollUI = () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    if (header) header.classList.toggle("scrolled", scrollTop > 24);
+    if (progressBar) {
+      const progress = scrollable > 0 ? Math.min(100, (scrollTop / scrollable) * 100) : 0;
+      progressBar.style.width = progress + "%";
+    }
+    ticking = false;
+  };
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateScrollUI);
+      ticking = true;
+    }
+  }, { passive: true });
+  updateScrollUI();
 
-const mainNav =
-  document.getElementById("main-nav");
+  const setMenu = (open, returnFocus = false) => {
+    if (!menuToggle || !mainNav) return;
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    mainNav.classList.toggle("open", open);
+    mainNav.setAttribute("aria-hidden", String(!open));
+    const mobileViewport = window.innerWidth < 768;
+    mainNav.inert = mobileViewport && !open;
+    mainNav.setAttribute("aria-hidden", String(mobileViewport && !open));
+    document.body.classList.toggle("menu-open", open);
+    if (open && mobileViewport) {
+      const firstLink = mainNav.querySelector("a");
+      if (firstLink && window.innerWidth < 768) firstLink.focus({ preventScroll: true });
+    } else if (returnFocus) {
+      menuToggle.focus({ preventScroll: true });
+    }
+  };
 
-const year =
-  document.getElementById("year");
-
-const revealElements =
-  document.querySelectorAll(".reveal");
-
-
-/* =========================================================
-   YEAR
-========================================================= */
-
-if (year) {
-
-  year.textContent =
-    new Date().getFullYear();
-
-}
-
-
-/* =========================================================
-   HEADER SCROLL
-========================================================= */
-
-function updateHeader() {
-
-  if (!header) {
-    return;
+  if (menuToggle && mainNav) {
+    const mobileViewport = window.innerWidth < 768;
+    mainNav.inert = mobileViewport;
+    mainNav.setAttribute("aria-hidden", String(mobileViewport));
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      setMenu(!isOpen);
+    });
+    mainNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => setMenu(false));
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+        setMenu(false, true);
+      }
+    });
+    document.addEventListener("click", event => {
+      if (menuToggle.getAttribute("aria-expanded") === "true" &&
+          !mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+        setMenu(false);
+      }
+    });
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        setMenu(false);
+        mainNav.inert = false;
+        mainNav.setAttribute("aria-hidden", "false");
+      } else if (menuToggle.getAttribute("aria-expanded") !== "true") {
+        mainNav.inert = true;
+        mainNav.setAttribute("aria-hidden", "true");
+      }
+    });
   }
 
-
-  if (window.scrollY > 20) {
-
-    header.classList.add("scrolled");
-
+  if ("IntersectionObserver" in window && !reducedMotion.matches) {
+    const observer = new IntersectionObserver((entries, instance) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          instance.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -35px 0px" });
+    revealItems.forEach(item => observer.observe(item));
   } else {
-
-    header.classList.remove("scrolled");
-
+    revealItems.forEach(item => item.classList.add("is-visible"));
   }
 
-}
-
-
-window.addEventListener(
-  "scroll",
-  updateHeader,
-  {
-    passive: true
-  }
-);
-
-
-updateHeader();
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-function closeMenu() {
-
-  if (!mainNav || !menuToggle) {
-    return;
-  }
-
-
-  mainNav.classList.remove("open");
-
-  menuToggle.classList.remove("active");
-
-
-  menuToggle.setAttribute(
-    "aria-expanded",
-    "false"
-  );
-
-
-  menuToggle.setAttribute(
-    "aria-label",
-    "Abrir menú"
-  );
-
-
-  document.body.classList.remove(
-    "menu-open"
-  );
-
-}
-
-
-function openMenu() {
-
-  if (!mainNav || !menuToggle) {
-    return;
-  }
-
-
-  mainNav.classList.add("open");
-
-  menuToggle.classList.add("active");
-
-
-  menuToggle.setAttribute(
-    "aria-expanded",
-    "true"
-  );
-
-
-  menuToggle.setAttribute(
-    "aria-label",
-    "Cerrar menú"
-  );
-
-
-  document.body.classList.add(
-    "menu-open"
-  );
-
-}
-
-
-if (menuToggle) {
-
-  menuToggle.addEventListener(
-    "click",
-    () => {
-
-      const isOpen =
-        mainNav.classList.contains("open");
-
-
-      if (isOpen) {
-
-        closeMenu();
-
-      } else {
-
-        openMenu();
-
-      }
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   CLOSE MENU ON LINK
-========================================================= */
-
-document
-  .querySelectorAll(".main-nav a")
-  .forEach((link) => {
-
-    link.addEventListener(
-      "click",
-      () => {
-
-        closeMenu();
-
-      }
-    );
-
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", event => {
+      const id = anchor.getAttribute("href");
+      if (!id || id === "#") return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "start" });
+    });
   });
-
-
-/* =========================================================
-   ESC KEY
-========================================================= */
-
-document.addEventListener(
-  "keydown",
-  (event) => {
-
-    if (event.key === "Escape") {
-
-      closeMenu();
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-
-if (
-  "IntersectionObserver" in window
-) {
-
-  const observer =
-    new IntersectionObserver(
-      (entries, observerInstance) => {
-
-        entries.forEach(
-          (entry) => {
-
-            if (
-              !entry.isIntersecting
-            ) {
-
-              return;
-
-            }
-
-
-            entry.target.classList.add(
-              "visible"
-            );
-
-
-            observerInstance.unobserve(
-              entry.target
-            );
-
-          }
-        );
-
-      },
-      {
-        threshold: 0.12,
-
-        rootMargin:
-          "0px 0px -35px 0px"
-      }
-    );
-
-
-  revealElements.forEach(
-    (element) => {
-
-      observer.observe(element);
-
-    }
-  );
-
-} else {
-
-  revealElements.forEach(
-    (element) => {
-
-      element.classList.add(
-        "visible"
-      );
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   SMOOTH INTERNAL LINKS
-========================================================= */
-
-document
-  .querySelectorAll('a[href^="#"]')
-  .forEach((anchor) => {
-
-    anchor.addEventListener(
-      "click",
-      (event) => {
-
-        const targetId =
-          anchor.getAttribute("href");
-
-
-        if (
-          !targetId ||
-          targetId === "#"
-        ) {
-
-          return;
-
-        }
-
-
-        const target =
-          document.querySelector(
-            targetId
-          );
-
-
-        if (!target) {
-
-          return;
-
-        }
-
-
-        event.preventDefault();
-
-
-        const reducedMotion =
-          window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-          ).matches;
-
-
-        target.scrollIntoView({
-
-          behavior:
-            reducedMotion
-              ? "auto"
-              : "smooth",
-
-          block: "start"
-
-        });
-
-      }
-    );
-
-  });
-
-
-/* =========================================================
-   CLOSE MOBILE MENU ON RESIZE
-========================================================= */
-
-window.addEventListener(
-  "resize",
-  () => {
-
-    if (
-      window.innerWidth >= 768
-    ) {
-
-      closeMenu();
-
-    }
-
-  }
-);
+})();

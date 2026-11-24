@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.lionbeat.com/sitemap.xml
+Sitemap: https://lionbeat-landing.vercel.app/sitemap.xml
