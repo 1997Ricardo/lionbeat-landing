@@ -38,9 +38,11 @@
     menuToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
     mainNav.classList.toggle("open", open);
     mainNav.setAttribute("aria-hidden", String(!open));
-    mainNav.inert = !open;
+    const mobileViewport = window.innerWidth < 768;
+    mainNav.inert = mobileViewport && !open;
+    mainNav.setAttribute("aria-hidden", String(mobileViewport && !open));
     document.body.classList.toggle("menu-open", open);
-    if (open) {
+    if (open && mobileViewport) {
       const firstLink = mainNav.querySelector("a");
       if (firstLink && window.innerWidth < 768) firstLink.focus({ preventScroll: true });
     } else if (returnFocus) {
@@ -49,7 +51,9 @@
   };
 
   if (menuToggle && mainNav) {
-    mainNav.inert = true;
+    const mobileViewport = window.innerWidth < 768;
+    mainNav.inert = mobileViewport;
+    mainNav.setAttribute("aria-hidden", String(mobileViewport));
     menuToggle.addEventListener("click", () => {
       const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
       setMenu(!isOpen);
@@ -69,8 +73,13 @@
       }
     });
     window.addEventListener("resize", () => {
-      if (window.innerWidth >= 768 && menuToggle.getAttribute("aria-expanded") === "true") {
+      if (window.innerWidth >= 768) {
         setMenu(false);
+        mainNav.inert = false;
+        mainNav.setAttribute("aria-hidden", "false");
+      } else if (menuToggle.getAttribute("aria-expanded") !== "true") {
+        mainNav.inert = true;
+        mainNav.setAttribute("aria-hidden", "true");
       }
     });
   }
